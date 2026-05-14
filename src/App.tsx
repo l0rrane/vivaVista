@@ -192,7 +192,11 @@ export default function App() {
           <div className="relative mx-auto flex w-full max-w-7xl flex-col items-center">
             <Reveal className="text-center">
               <div className="mx-auto mb-7 grid h-24 w-24 place-items-center rounded-full border border-[#C9A14A]/70 bg-black/55 text-center shadow-[0_0_35px_rgba(201,161,74,0.3)] backdrop-blur-lg">
-                <span className="text-xs tracking-[0.34em] text-[#EEDAAA]">ESPIN</span>
+                <img
+      src="/img/logo.png"
+      alt="Condomínio"
+      className="h-full w-full object-cover"
+    />
               </div>
               <h1 className="mx-auto max-w-4xl text-balance text-4xl font-semibold leading-tight text-[#F6F3ED] md:text-6xl">
                 Transformando condominios com gestao profissional, seguranca e valorizacao patrimonial.
@@ -201,23 +205,39 @@ export default function App() {
                 Uma administracao moderna, eficiente e transparente para elevar o padrao do seu condominio.
               </p>
               <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
-                <GoldButton>Solicitar Apresentacao</GoldButton>
-                <GoldButton secondary>Conheca os Projetos</GoldButton>
+               <a href="#projetos-em-andamento" style={{ textDecoration: 'none' }} >
+              <GoldButton>
+                Projetos em andamento
+               </GoldButton>
+              </a>
+               <a href="#resultados-gestao" style={{ textDecoration: 'none' }}>
+              <GoldButton secondary>
+                 Conheca os Resultados
+              </GoldButton>
+              </a>
               </div>
             </Reveal>
 
-            <Reveal className="mt-12 w-full max-w-5xl md:mt-16">
-              <div className="aspect-[4/3] w-full overflow-hidden border border-[#C9A14A]/45 bg-gradient-to-br from-zinc-900/80 via-zinc-950/80 to-black shadow-[0_0_80px_rgba(201,161,74,0.2)]">
-                <div className="relative flex h-full w-full items-center justify-center">
-                  <div className="absolute inset-0 bg-[linear-gradient(115deg,rgba(201,161,74,0.16),transparent_55%)]" />
-                  <div className="absolute inset-8 border border-[#C9A14A]/30 md:inset-12" />
-                  <div className="relative text-center">
-                    <p className="text-xs uppercase tracking-[0.4em] text-[#c9a14a]">Mockup Premium 4:3</p>
-                    <p className="mt-3 text-lg text-zinc-200">Espaco reservado para imagem real do condominio</p>
-                  </div>
-                </div>
-              </div>
-            </Reveal>
+           <Reveal className="mt-12 w-full max-w-5xl md:mt-16">
+  <div className="relative aspect-[4/3] w-full overflow-hidden border border-[#C9A14A]/45 shadow-[0_0_80px_rgba(201,161,74,0.2)]">
+
+    <img
+      src="/img/espin.jpg"
+      alt="Condomínio"
+      className="h-full w-full object-cover"
+    />
+
+    {/* Overlay escuro */}
+    <div className="absolute inset-0 bg-black/30" />
+
+    {/* Glow dourado */}
+    <div className="absolute inset-0 bg-[linear-gradient(115deg,rgba(201,161,74,0.16),transparent_55%)]" />
+
+    {/* Borda interna */}
+    <div className="absolute inset-8 border border-[#C9A14A]/30 md:inset-12" />
+
+  </div>
+</Reveal>
           </div>
         </section>
 
@@ -243,12 +263,14 @@ export default function App() {
 
         <section className="border-y border-[#C9A14A]/15 bg-[linear-gradient(180deg,#101010,#0B0B0B)] px-6 py-20 md:px-12 md:py-28">
           <div className="mx-auto max-w-7xl">
-            <Reveal>
+            <section id="resultados-gestao">
+            <Reveal >
               <SectionHeading
                 title="Resultados da Gestao"
                 subtitle="Evolucao visivel em cada frente de trabalho com uma abordagem de melhoria continua e entrega de alto padrao."
               />
             </Reveal>
+              </section>
 
             <div className="grid gap-6 lg:grid-cols-2">
               {showcaseItems.map((item) => (
@@ -352,11 +374,14 @@ export default function App() {
 
         <section className="mx-auto w-full max-w-7xl px-6 py-20 md:px-12 md:py-28">
           <Reveal>
+            <section id="projetos-em-andamento">
             <SectionHeading
               title="Projetos em Andamento"
               subtitle="Frentes estrategicas para ampliar conforto, sustentabilidade e competitividade do condominio no longo prazo."
             />
+            </section>
           </Reveal>
+          
 
           <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
             {ongoingProjects.map((project) => (
