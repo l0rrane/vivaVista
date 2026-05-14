@@ -193,7 +193,7 @@ export default function App() {
             <Reveal className="text-center">
               <div className="mx-auto mb-7 grid h-24 w-24 place-items-center rounded-full border border-[#C9A14A]/70 bg-black/55 text-center shadow-[0_0_35px_rgba(201,161,74,0.3)] backdrop-blur-lg">
                 <img
-      src="/img/logo1.png"
+      src="/img/logo.png"
       alt="Condomínio"
       className="h-full w-full object-cover"
     />
